@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en" class="m-0 p-0 w-screen min-h-screen bg-navy-dark"><head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OffSec Wiki </title>
+        <meta name="description" content="Sticky notes for pentesting. Search hacking techniques and tools for penetration testings, RedTeaming, bug bounty, CTFs.">
+        
+        <link rel="icon" type="image/x-icon" href="/img/favicon-32.png">
+        <link rel="stylesheet" href="/pagefind/pagefind-ui.css"><link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="/css/carbonads.css">
+        
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@muhammdhaidari">
+        <meta name="twitter:creator" content="@muhammdhaidari">
+        <meta property="og:url" content="https://offsec.PenTest.tools/">
+        <meta property="og:title" content="OffSec Wiki ">
+        <meta property="og:description" content="Sticky notes for pentesting. Search hacking techniques and tools for penetration testings, RedTeaming, bug bounty, CTFs.">
+        <meta property="og:image" content="https://offsec.PenTest.tools/img/screenshot.png">
+        
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RR6XYHYTQ9"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-RR6XYHYTQ9');
+        </script>
+    <script type="text/javascript" src="/pagefind/pagefind-ui.js"></script><script type="text/javascript">window.addEventListener('DOMContentLoaded', () => { new PagefindUI({"element":"#search","showImages":false,"showEmptyFilters":true,"resetStyles":true,"bundlePath":"/pagefind/","baseUrl":"/"}); });</script><link rel="stylesheet" href="/codecopy/codecopy.css"><script type="text/javascript" src="/codecopy/codecopy.js"></script></head>
+
+    <body class="m-0 p-0 w-screen min-h-screen text-basic text-white text-sm">
+
+        <header class="sticky top-0 w-full h-[70px] z-20 bg-gradient-to-r from-pink-dark">
+    <div class="mx-auto w-full sm:w-2/3 h-full flex justify-around items-center">
+        <div class="w-full h-full p-2 flex items-center space-x-3">
+            <a href="/" class="hidden sm:block">
+                <span class="text-base text-white font-bold">OFFSEC Wiki</span>
+            </a>
+            
+            <div id="search"></div>
+        </div>
+
+        
+        <div class="hidden sm:flex w-full h-full p-2 items-center justify-center space-x-3">
+            
+            <a href="https://github.com/muhammd/" target="_blank" rel="noopener noreferrer" alt="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" class="fill-white w-8 h-8 hover:brightness-200">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+            </a>
+            
+            <a href="https://twitter.com/muhammdhaidari" target="_blank" rel="noopener noreferrer" alt="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" class="fill-sky w-8 h-8 hover:brightness-200">
+                    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"></path></svg>
+            </a>
+        </div>
+    </div>
+</header>
+
+<div id="search_bg" class="fixed top-0 left-0 w-full z-10 h-full bg-black opacity-50 hidden"></div>
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        //Display the black filter when searching
+        const searchBgElem = document.getElementById("search_bg");
+        const drawerElem = document.querySelector(".pagefind-ui__drawer");
+        const inputElem = document.querySelector(".pagefind-ui__search-input");
+
+        if (searchBgElem) {
+            searchBgElem.addEventListener('click', () => {
+                searchBgElem.classList.add("hidden");
+                drawerElem.style.visibility = "hidden";
+                drawerElem.style.opacity = 0;
+            });
+        }
+
+        inputElem.addEventListener('focus', () => {
+            if (searchBgElem) {
+                searchBgElem.classList.remove("hidden");
+                drawerElem.style.visibility = "visible";
+                drawerElem.style.opacity = 1;
+            }
+        });
+    });
+</script>
+
+        <main class="w-full h-full">
+            <div class="w-full h-full flex flex-col items-center">
+
+    
+    <div class="w-full px-8 py-6 md:py-16 flex flex-col md:flex-row item-center justify-around gap-y-8 md:gap-x-8 md:gap-y-0">
+        <div class="flex flex-col justify-center text-4xl font-bold">
+            <span>
+                Sticky notes for pentesting.
+            </span>
+            <span>
+                Search hacking techniques and tools for penetration testings, bug bounty, CTFs.
+            </span>
+        </div>
+
+        
+        <div class="md:min-w-[480px] min-h-[180px] flex flex-col justify-center">
+            <script async="" type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CWYDE53L&amp;placement=exploit-noteshdksorg" id="_carbonads_js">
+            </script>
+        </div>
+        
+    </div>
+    
+
+
+    
+    <div id="list-of-exploit" class="w-full overflow-x-scroll my-6 w-full">
+
+        
+        <div id="scroll-wrapper" class="flex items-start space-x-3 p-4">
+
+            
+            <div class="relative w-[320px] bg-black border-2 border-white rounded-md p-4 flex-shrink-0">
+                <div class="mb-4 w-full flex items-center gap-x-2 border-b-2 border-slate-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zm3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"></path>
+                    </svg>
+                    <h3 class="text-lg text-white">Reconnaissance</h3>
+                </div>
+                <div>
+                    <ul>
+                        <li class="my-2">
+                            <a href="/exploit/reconnaissance/email-analysis/" class="text-base text-pink-light hover:brightness-200">
+                                Email Analysis
+                            </a>
+                        </li>
+                        <li class="my-2">
+                            <a href="/exploit/reconnaissance/find-leaked-api-keys/" class="text-base text-pink-light hover:brightness-200">
+                                Find Leaked API Keys
+                            </a>
+                        </li>
+                        <li class="my-2">
+                            <a href="/exploit/reconnaissance/google-dorks/" class="text-base text-pink-light hover:brightness-200">
+                                Google Dorks
+                            </a>
+                        </li>
+                        <li class="my-2">
+                            <a href="/exploit/reconnaissance/imint-and-geoint/" class="text-base text-pink-light hover:brightness-200">
+                                IMINT (Image Intelligence) and GEOINT (Geospatial Intelligence)
+                            </a>
+                        </li>
+                        <li class="my-2">
+                            <a href="/exploit/reconnaissance/osint/" class="text-base text-pink-light hover:brightness-200">
+                                OSINT (Open Source Intelligence)
+                            </a>
+                        </li>
+                        <li class="my-2">
+                            <a href="/exploit/reconnaissance/person-investigation/" class="text-base text-pink-light hover:brightness-200">
+                                Person Investigation
+                            </a>
+                        </li>
+                        <li class="my-2">
+                            <a href="/exploit/reconnaissance/port-scan/" class="text-base text-pink-light hover:brightness-200">
+                                Port Scan
+                            </a>
+                        </li>
+                        <li class="my-2">
+                            <a href="/exploit/reconnaissance/" class="text-base text-pink-light hover:brightness-200">
+                                Reconnaissance
+                            </a>
+                        </li>
+                        <li class="my-2">
+                            <a href="/exploit/reconnaissance/shodan-dorks/" class="text-base text-pink-light hover:brightness-200">
+                                Shodan Dorks
+                            </a>
+                        </li>
+                        <li class="my-2">
+                            <a href="/exploit/reconnaissance/social-engineering/" class="text-base text-pink-light hover:brightness-200">
+                                Social Engineering
+                            </a>
+                        </li>
+                        <li class="my-2">
+                            <a href="/exploit/reconnaissance/subdomain-discovery/" class="text-base text-pink-light hover:brightness-200">
+                                Subdomain Discovery
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="relative w-[320px] bg-black border-2 rounded-md p-4 flex-shrink-0">
+                <div class="mb-4 w-full flex items-center gap-x-2 border-b-2 border-slate-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"></path>
+                    </svg>
+                    <h3 class="text-lg text-white">Linux</h3>
+                </div>
+                <div>    
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">Privilege Escalation</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/ansible-playbook-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Ansible Playbook Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/apache-conf-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Apache Conf Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/bash-eq-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Bash eq Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/buffer-overflow-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Buffer Overflow Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/chrome-remote-debugger-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                Chrome Remote Debugger Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/ghidra-debug-mode-rce/" class="text-base text-pink-light hover:brightness-200">
+                                Ghidra Debug Mode RCE
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/gnuplot-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Gnuplot Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Linux Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/mozilla-pentsting/" class="text-base text-pink-light hover:brightness-200">
+                                Mozilla Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/openssl-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                OpenSSL Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/pip-download-code-execution/" class="text-base text-pink-light hover:brightness-200">
+                                Pip Download Code Execution
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/polkit-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                PolKit Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/python-eval-code-execution/" class="text-base text-pink-light hover:brightness-200">
+                                Python Eval Code Execution
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/python-jails-escape/" class="text-base text-pink-light hover:brightness-200">
+                                Python Jails Escape
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/python-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Python Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/python-yaml-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Python Yaml Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/ruby-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Ruby Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/rust-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Rust Privilege Escalation
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">Sudo PrivEsc</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/sudo/sudo-clamav-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Sudo ClamAV Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/sudo/sudo-dstat-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Sudo Dstat Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/sudo/sudo-exiftool-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Sudo Exiftool Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/sudo/sudo-fail2ban-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Sudo Fail2ban Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/sudo/sudo-git-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Sudo Git Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/sudo/sudo-java-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Sudo Java Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/sudo/sudo-openvpn-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Sudo OpenVPN Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/sudo/sudo-path-traversal-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Sudo Path Traversal Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/sudo/" class="text-base text-pink-light hover:brightness-200">
+                                Sudo Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/sudo/sudo-privilege-escalation-by-overriding-shared-library/" class="text-base text-pink-light hover:brightness-200">
+                                Sudo Privilege Escalation by Overriding Shared Library
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/sudo/sudo-reboot-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Sudo Reboot Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/sudo/sudo-screen-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Sudo Screen Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/sudo/sudo-service-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Sudo Service Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/sudo/sudo-shutdown-poweroff-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Sudo Shutdown, Poweroff Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/sudo/sudo-systemctl-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Sudo Systemctl Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/linux/privilege-escalation/sudo/sudo-tee-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Sudo Tee Privilege Escalation
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="relative w-[320px] bg-black border-2 rounded-md p-4 flex-shrink-0">
+                <div class="mb-4 w-full flex items-center gap-x-2 border-b-2 border-slate-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"></path>
+                    </svg>
+                    <h3 class="text-lg text-white">Windows</h3>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">Active Directory</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/active-directory/ad-cs-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                AD CS (Active Directory Certificate Services) Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/active-directory/as-rep-roasting/" class="text-base text-pink-light hover:brightness-200">
+                                AS-REP Roasting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/active-directory/" class="text-base text-pink-light hover:brightness-200">
+                                Active Directory Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/active-directory/tool/bloodhound-sharphound/" class="text-base text-pink-light hover:brightness-200">
+                                BloodHound SharpHound for Active Directory
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/active-directory/kerberos-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                Kerberos Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/active-directory/laps-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                LAPS (Local Administrator Password Solution) Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/active-directory/ldap-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                LDAP (Lightweight Directory Access Protocol) Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/active-directory/ntlm-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                NTLM (New Technology LAN Manager) Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/active-directory/netlogon-elavasion-of-privilege/" class="text-base text-pink-light hover:brightness-200">
+                                Netlogon Elavasion of Privilege
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/active-directory/smb-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                SMB (Server Message Block) Pentesting
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">Protocols</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/protocol/msrpc-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                MSRPC (Microsoft Remote Procedure Call) Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/protocol/rdp-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                RDP (Remote Desktop Protocol) Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/protocol/winrm-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                WinRM (Windows Remote Management) Pentesting
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">Privilege Escalation</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/privilege-escalation/iperius-backup-service-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Iperius Backup Service Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/privilege-escalation/manageengine-adselfservice-plus/" class="text-base text-pink-light hover:brightness-200">
+                                ManageEngine ADSelfService Plus PrivEsc
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/privilege-escalation/mimikatz/" class="text-base text-pink-light hover:brightness-200">
+                                Mimikatz
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/privilege-escalation/outlook-reminder-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Outlook Reminder Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/privilege-escalation/uac-windows-privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                UAC Windows Privilege Escalation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/privilege-escalation/windows-privesc-with-potatoes/" class="text-base text-pink-light hover:brightness-200">
+                                Windows PrivEsc with Potatoes
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/privilege-escalation/windows-privesc-with-registy-keys/" class="text-base text-pink-light hover:brightness-200">
+                                Windows PrivEsc with Registry Keys
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/privilege-escalation/windows-privesc-with-sebackupprivilege/" class="text-base text-pink-light hover:brightness-200">
+                                Windows PrivEsc with SeBackupPrivilege
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/privilege-escalation/windows-privesc-with-unquoted-service-path/" class="text-base text-pink-light hover:brightness-200">
+                                Windows PrivEsc with Unquoted Service Path
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/windows/privilege-escalation/" class="text-base text-pink-light hover:brightness-200">
+                                Windows Privilege Escalation
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="relative w-[320px] bg-black border-2 rounded-md p-4 flex-shrink-0">
+                <div class="mb-4 w-full flex items-center gap-x-2 border-b-2 border-slate-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"></path>
+                    </svg>
+                    <h3 class="text-lg text-white">Web</h3>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">Methods</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/method/http-rate-limit-bypass/" class="text-base text-pink-light hover:brightness-200">
+                                HTTP Rate Limit Bypass
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/method/web-vhost-enumeration/" class="text-base text-pink-light hover:brightness-200">
+                                Virtual Hosts (VHOSTS) Enumeration
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/method/waf-detection/" class="text-base text-pink-light hover:brightness-200">
+                                WAF (Web Application Firewall) Detection
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/method/web-basic-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                Web Basic Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/method/web-content-discovery/" class="text-base text-pink-light hover:brightness-200">
+                                Web Content Discovery
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/method/web-login-bypass/" class="text-base text-pink-light hover:brightness-200">
+                                Web Login Bypass
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">Security Risks</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/security-risk/blind-xxe/" class="text-base text-pink-light hover:brightness-200">
+                                Blind XXE
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/security-risk/broken-access-control/" class="text-base text-pink-light hover:brightness-200">
+                                Broken Access Control
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/security-risk/business-logic-attack/" class="text-base text-pink-light hover:brightness-200">
+                                Business Logic Attack
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/security-risk/cors-attack/" class="text-base text-pink-light hover:brightness-200">
+                                CORS (Cross-Origin Resource Sharing) Attack
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/security-risk/crlf-injection/" class="text-base text-pink-light hover:brightness-200">
+                                CRLF (Carriage Return Line Feed) Injection
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/security-risk/csrf/" class="text-base text-pink-light hover:brightness-200">
+                                CSRF (Cross-Site Request Forgery)
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">CMS</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/cms/bolt-cms-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                Bolt CMS Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/cms/" class="text-base text-pink-light hover:brightness-200">
+                                CMS (Content Management System) Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/cms/cockpit-cms-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                Cockpit CMS Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/cms/concrete-cms-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                Concrete CMS Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/cms/fuel-cms-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                FUEL CMS Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/cms/joomla-cms-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                Joomla CMS Pentesting
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">Frameworks</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/framework/java/ajp-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                AJP (Apache JServ Protocol) Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/framework/javascript/angular-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                Angular Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/framework/java/apache-struts-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                Apache Struts Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/framework/python/django-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                Django Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/framework/python/flask-jinja2-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                Flask Jinja2 Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/framework/python/python-pickle-rce/" class="text-base text-pink-light hover:brightness-200">
+                                Python Pickle RCE
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">API</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/api/" class="text-base text-pink-light hover:brightness-200">
+                                API Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/web/api/graphql-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                GraphQL Pentesting
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="relative w-[320px] bg-black border-2 rounded-md p-4 flex-shrink-0">
+                <div class="mb-4 w-full flex items-center gap-x-2 border-b-2 border-slate-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"></path>
+                    </svg>
+                    <h3 class="text-lg text-white">Network</h3>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">Protocols</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/protocol/dhcp-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                Dynamic Host Configuration Protocol (DHCP) Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/protocol/ftp-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                FTP (File Transfer Protocol) Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/protocol/irc-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                IRC (Internet Relay Chat) Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/protocol/memcache-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                Memcache Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/protocol/modbus-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                Modbus Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/protocol/nfs-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                NFS (Network File System) Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/protocol/ntp-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                NTP (Network Time Protocol) Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/protocol/rtsp-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                RTSP (Real Time Streaming Protocol) Pentesting
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">Port Forwarding</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/port-forwarding/port-forwarding-with-chisel/" class="text-base text-pink-light hover:brightness-200">
+                                Port Forwarding with Chisel
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/port-forwarding/port-forwarding-with-plink/" class="text-base text-pink-light hover:brightness-200">
+                                Port Forwarding with Plink
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/port-forwarding/port-forwarding-with-ssh/" class="text-base text-pink-light hover:brightness-200">
+                                Port Forwarding with SSH
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/port-forwarding/port-forwarding-with-socat/" class="text-base text-pink-light hover:brightness-200">
+                                Port Forwarding with Socat
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">WiFi</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/wifi/evil-twin-attack/" class="text-base text-pink-light hover:brightness-200">
+                                Evil Twin Attack
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/wifi/mitm-attack/" class="text-base text-pink-light hover:brightness-200">
+                                MITM (Man in the Middle) Attack
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/wifi/wifi-hacking/" class="text-base text-pink-light hover:brightness-200">
+                                WiFi Hacking
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/wifi/wifi-password-recovery/" class="text-base text-pink-light hover:brightness-200">
+                                WiFi Password Recovery
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">Attack</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/attack/adobe-pdf-attack/" class="text-base text-pink-light hover:brightness-200">
+                                Adobe PDF Attack
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/attack/anonymize-traffic-with-tor/" class="text-base text-pink-light hover:brightness-200">
+                                Anonymize Traffic with Tor
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">Others</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/arp-spoofing/" class="text-base text-pink-light hover:brightness-200">
+                                ARP (Address Resolution Protocol) Spoofing
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/apache-hadoop-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                Apache Hadoop Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/eternetip-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                EthernetIP Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/fastcgi-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                FastCGI Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/firewall/" class="text-base text-pink-light hover:brightness-200">
+                                Firewall
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/honeypots/" class="text-base text-pink-light hover:brightness-200">
+                                Honeypots
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/mac-flooding-attack/" class="text-base text-pink-light hover:brightness-200">
+                                MAC Flooding Attack
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/network/network-traffic-analysis/" class="text-base text-pink-light hover:brightness-200">
+                                Network Traffic Analysis (NTA)
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="relative w-[320px] bg-black border-2 rounded-md p-4 flex-shrink-0">
+                <div class="mb-4 w-full flex items-center gap-x-2 border-b-2 border-slate-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V13.5zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V18zm2.498-6.75h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V13.5zm0 2.25h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V18zm2.504-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zm0 2.25h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V18zm2.498-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zM8.25 6h7.5v2.25h-7.5V6zM12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.65 4.5 4.757V19.5a2.25 2.25 0 002.25 2.25h10.5a2.25 2.25 0 002.25-2.25V4.757c0-1.108-.806-2.057-1.907-2.185A48.507 48.507 0 0012 2.25z"></path>
+                    </svg>
+                    <h3 class="text-lg text-white">Binary Exploitation</h3>
+                </div>
+                <div>
+                    <ul>
+                        <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/binary-exploitation/" class="text-base text-pink-light hover:brightness-200">
+                                Binary Exploitation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/binary-exploitation/binary-exploitation-with-buffer-overflow/" class="text-base text-pink-light hover:brightness-200">
+                                Binary Exploitation with Buffer Overflow
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/binary-exploitation/binary-exploitation-with-canary-bypass/" class="text-base text-pink-light hover:brightness-200">
+                                Binary Exploitation with Canary Bypass
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/binary-exploitation/binary-exploitation-with-format-string/" class="text-base text-pink-light hover:brightness-200">
+                                Binary Exploitation with Format String
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/binary-exploitation/binary-exploitation-with-got/" class="text-base text-pink-light hover:brightness-200">
+                                Binary Exploitation with GOT
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/binary-exploitation/binary-exploitation-with-rop/" class="text-base text-pink-light hover:brightness-200">
+                                Binary Exploitation with ROP
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/binary-exploitation/binary-exploitation-with-race-conditions/" class="text-base text-pink-light hover:brightness-200">
+                                Binary Exploitation with Race Conditions
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/binary-exploitation/binary-exploitation-with-time-guessing/" class="text-base text-pink-light hover:brightness-200">
+                                Binary Exploitation with Time Guessing
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/binary-exploitation/binary-exploitation-with-ret2libc/" class="text-base text-pink-light hover:brightness-200">
+                                Binary Exploitation with ret2libc
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/binary-exploitation/binary-exploitation-with-ret2plt/" class="text-base text-pink-light hover:brightness-200">
+                                Binary Exploitation with ret2plt
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/binary-exploitation/pwntools-cheat-sheet/" class="text-base text-pink-light hover:brightness-200">
+                                Pwntools Cheat Sheet
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </ul></div>
+            </div>
+            
+
+            
+            <div class="relative w-[320px] bg-black border-2 rounded-md p-4 flex-shrink-0">
+                <div class="mb-4 w-full flex items-center gap-x-2 border-b-2 border-slate-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"></path>
+                    </svg>
+                    <h3 class="text-lg text-white">Database</h3>
+                </div>
+                <div>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/database/couchdb-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                CouchDB Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/database/influxdb-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                InfluxDB Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/database/mssql-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                MSSQL (Microsoft SQL) Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/database/mongodb-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                MongoDB Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/database/mysql-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                MySQL Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/database/neo4j-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                Neo4j Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/database/postgresql-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                PostgreSQL Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/database/redis-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                Redis Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/database/sqlite-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                SQLite Pentesting
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="relative w-[320px] bg-black border-2 rounded-md p-4 flex-shrink-0">
+                <div class="mb-4 w-full flex items-center gap-x-2 border-b-2 border-slate-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"></path>
+                    </svg>
+                    <h3 class="text-lg text-white">Container</h3>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">Docker</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/container/docker/docker-engine-api-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                Docker Engine API Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/container/docker/docker-escape/" class="text-base text-pink-light hover:brightness-200">
+                                Docker Escape
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/container/docker/" class="text-base text-pink-light hover:brightness-200">
+                                Docker Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/container/docker/docker-registry-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                Docker Registry Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/container/docker/moby-docker-engine-privesc/" class="text-base text-pink-light hover:brightness-200">
+                                Moby Docker Engine PrivEsc
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">Kubernetes</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/container/kubernetes/kubernetes-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                Kubernetes Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/container/kubernetes/microk8s-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                MicroK8s Pentesting
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+
+
+            
+            <div class="relative w-[320px] bg-black border-2 rounded-md p-4 flex-shrink-0">
+                <div class="mb-4 w-full flex items-center gap-x-2 border-b-2 border-slate-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                    </svg>
+                    <h3 class="text-lg text-white">Cryptography</h3>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">Algorithm</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/algorithm/aes/" class="text-base text-pink-light hover:brightness-200">
+                                AES (Advanced Encryption Standard)
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/algorithm/aes-cbc-bit-flipping-attack/" class="text-base text-pink-light hover:brightness-200">
+                                AES-CBC Bit Flipping Attack
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/algorithm/aes-cbc-padding-oracle-attack/" class="text-base text-pink-light hover:brightness-200">
+                                AES-CBC Padding Oracle Attack
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/algorithm/aes-ecb-padding-attack/" class="text-base text-pink-light hover:brightness-200">
+                                AES-ECB Padding Attack
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/algorithm/ansible-vault-secret/" class="text-base text-pink-light hover:brightness-200">
+                                Ansible Vault Secret
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/algorithm/atbash-cipher/" class="text-base text-pink-light hover:brightness-200">
+                                Atbash Cipher
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/algorithm/base32-base64/" class="text-base text-pink-light hover:brightness-200">
+                                Base32, Base64
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/algorithm/caesar-cipher/" class="text-base text-pink-light hover:brightness-200">
+                                Caesar Cipher
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/algorithm/camellia-cipher/" class="text-base text-pink-light hover:brightness-200">
+                                Camellia Cipher
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/algorithm/certificates/" class="text-base text-pink-light hover:brightness-200">
+                                Certificates
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/algorithm/" class="text-base text-pink-light hover:brightness-200">
+                                Cryptography
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/algorithm/diffie-hellman-key-exchange/" class="text-base text-pink-light hover:brightness-200">
+                                Diffie-Hellman Key Exchange
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/algorithm/ecc/" class="text-base text-pink-light hover:brightness-200">
+                                ECC (Elliptic Curve Cryptography)
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/algorithm/ecdsa/" class="text-base text-pink-light hover:brightness-200">
+                                ECDSA (Elliptic Curve Digital Signature Algorithm)
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/algorithm/fernet/" class="text-base text-pink-light hover:brightness-200">
+                                Fernet
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/algorithm/gpg/" class="text-base text-pink-light hover:brightness-200">
+                                GPG (GNU Privacy Guard)
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/algorithm/hmac/" class="text-base text-pink-light hover:brightness-200">
+                                HMAC
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/algorithm/kdbx-files/" class="text-base text-pink-light hover:brightness-200">
+                                KDBX Files
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/algorithm/length-extension-attack/" class="text-base text-pink-light hover:brightness-200">
+                                Length Extension Attack
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/algorithm/md4-md5/" class="text-base text-pink-light hover:brightness-200">
+                                MD4, MD5
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">Key Derivation Function</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/key-derivation-function/bcrypt/" class="text-base text-pink-light hover:brightness-200">
+                                Bcrypt
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/key-derivation-function/pbkdf2/" class="text-base text-pink-light hover:brightness-200">
+                                PBKDF2
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/key-derivation-function/scrypt/" class="text-base text-pink-light hover:brightness-200">
+                                Scrypt
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">Tools</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/cryptography/tool/john-the-ripper/" class="text-base text-pink-light hover:brightness-200">
+                                John the Ripper
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="relative w-[320px] bg-black border-2 rounded-md p-4 flex-shrink-0">
+                <div class="mb-4 w-full flex items-center gap-x-2 border-b-2 border-slate-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 12.75c1.148 0 2.278.08 3.383.237 1.037.146 1.866.966 1.866 2.013 0 3.728-2.35 6.75-5.25 6.75S6.75 18.728 6.75 15c0-1.046.83-1.867 1.866-2.013A24.204 24.204 0 0112 12.75zm0 0c2.883 0 5.647.508 8.207 1.44a23.91 23.91 0 01-1.152 6.06M12 12.75c-2.883 0-5.647.508-8.208 1.44.125 2.104.52 4.136 1.153 6.06M12 12.75a2.25 2.25 0 002.248-2.354M12 12.75a2.25 2.25 0 01-2.248-2.354M12 8.25c.995 0 1.971-.08 2.922-.236.403-.066.74-.358.795-.762a3.778 3.778 0 00-.399-2.25M12 8.25c-.995 0-1.97-.08-2.922-.236-.402-.066-.74-.358-.795-.762a3.734 3.734 0 01.4-2.253M12 8.25a2.25 2.25 0 00-2.248 2.146M12 8.25a2.25 2.25 0 012.248 2.146M8.683 5a6.032 6.032 0 01-1.155-1.002c.07-.63.27-1.222.574-1.747m.581 2.749A3.75 3.75 0 0115.318 5m0 0c.427-.283.815-.62 1.155-.999a4.471 4.471 0 00-.575-1.752M4.921 6a24.048 24.048 0 00-.392 3.314c1.668.546 3.416.914 5.223 1.082M19.08 6c.205 1.08.337 2.187.392 3.314a23.882 23.882 0 01-5.223 1.082"></path>
+                    </svg>
+                    <h3 class="text-lg text-white">Malware</h3>
+                </div>
+                <div>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/malware/antivirus-evasion/" class="text-base text-pink-light hover:brightness-200">
+                                AV (Antivirus) Evasion
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/malware/libreoffice-macros/" class="text-base text-pink-light hover:brightness-200">
+                                LibreOffice Macros
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/malware/maldoc-analysis/" class="text-base text-pink-light hover:brightness-200">
+                                Maldoc Analysis
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/malware/malware-analysis/" class="text-base text-pink-light hover:brightness-200">
+                                Malware Analysis
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/malware/malware-detection-on-windows/" class="text-base text-pink-light hover:brightness-200">
+                                Malware Detection on Windows
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/malware/malware-dynamic-analysis-with-remnux/" class="text-base text-pink-light hover:brightness-200">
+                                Malware Dynamic Analysis with REMnux
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/malware/malware-static-analysis/" class="text-base text-pink-light hover:brightness-200">
+                                Malware Static Analysis
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/malware/npm-supply-chain-attack/" class="text-base text-pink-light hover:brightness-200">
+                                NPM Supply Chain Attack
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/malware/sigma-rules/" class="text-base text-pink-light hover:brightness-200">
+                                Sigma Rules
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/malware/splunk-pentesting/" class="text-base text-pink-light hover:brightness-200">
+                                Splunk Pentesting
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/malware/url-defanging/" class="text-base text-pink-light hover:brightness-200">
+                                URL Defanging
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="relative w-[320px] bg-black border-2 rounded-md p-4 flex-shrink-0">
+                <div class="mb-4 w-full flex items-center gap-x-2 border-b-2 border-slate-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
+                    </svg>
+                    <h3 class="text-lg text-white">Machine Learning</h3>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">Computer Vision</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/machine-learning/computer-vision/adversarial-attack-with-fgsm/" class="text-base text-pink-light hover:brightness-200">
+                                Adversarial Attack with FGSM (Fast Gradient Signed Method)
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/machine-learning/computer-vision/image-investigation/" class="text-base text-pink-light hover:brightness-200">
+                                Image Investigation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/machine-learning/computer-vision/image-manipulation/" class="text-base text-pink-light hover:brightness-200">
+                                Image Manipulation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/machine-learning/computer-vision/image-recognition-bypass/" class="text-base text-pink-light hover:brightness-200">
+                                Image Recognition Bypass
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">LLM</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/machine-learning/llm/llm-prompt-injection/" class="text-base text-pink-light hover:brightness-200">
+                                LLM Prompt Injection
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">Preprocessing</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/machine-learning/preprocessing/csv-data-manipulation/" class="text-base text-pink-light hover:brightness-200">
+                                CSV Data Manipulation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/machine-learning/preprocessing/dimensionality-reduction/" class="text-base text-pink-light hover:brightness-200">
+                                Dimensionality Reduction
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">Clustering</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/machine-learning/clustering/finding-optimal-number-of-clusters/" class="text-base text-pink-light hover:brightness-200">
+                                Finding Optimal Number of Clusters
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="pt-4 pb-2 text-base text-white opacity-80">Model</h4>
+                    <ul>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/machine-learning/model/ml-model-investigation/" class="text-base text-pink-light hover:brightness-200">
+                                ML Model Investigation
+                            </a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="/exploit/machine-learning/model/model-inversion-attack/" class="text-base text-pink-light hover:brightness-200">
+                                Model Inversion Attack
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+
+        </div>
+        
+    </div>
+    
+</div>
+
+
+        </main>
+
+        <footer class="w-full p-8 z-100 bg-navy-light">
+            <div class="w-full flex flex-col items-center space-y-2 text-base">
+                <div class="flex items-center justify-center space-x-2">
+                    <a href="/disclaimer" class="text-pink-light hover:brightness-200">Disclaimer</a>
+                    <a href="/privacy-policy" class="text-pink-light hover:brightness-200">Privacy Policy</a>
+                </div>
+                <hr class="w-[260px] white opacity-30">
+                <div class="flex items-center space-x-2">
+                    <a href="https://github.com/muhammd/" target="_blank" rel="noopener noreferrer" class="text-pink-light hover:brightness-200">
+                        GitHub
+                    </a>            
+                    <a href="https://twitter.com/muhammdhaidari" target="_blank" rel="noopener noreferrer" class="text-pink-light hover:brightness-200">
+                        Twitter
+                    </a>
+                </div>
+            </div>
+        </footer>
+    
+
+</body></html>

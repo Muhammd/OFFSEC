@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="m-0 p-0 w-screen min-h-screen bg-navy-dark">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ title or site.title }} {% if url != "/"  %}| {{ site.title }}{% endif %}</title>
+        <meta name="description" content="{{ description or site.description }}">
+        {# <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: w3.org/svg/2000 http://localhost:8888"> #}
+        <link rel="icon" type="image/x-icon" href="/assets/img/favicon-32.png">
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="/css/carbonads.css">
+        {% if "/exploit/" in url %}
+        <script type="text/javascript" src="/js/exploit.js"></script>
+        {% endif %}
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@muhammdhaidari">
+        <meta name="twitter:creator" content="@muhammdhaidari">
+        <meta property="og:url" content="https://offsec.PenTest.tools{{ url }}">
+        <meta property="og:title" content="{{ title or site.title }} {% if url != "/" %}| {{ site.title }}{% endif %}">
+        <meta property="og:description" content="{{ description or site.description }}">
+        <meta property="og:image" content="https://offsec.PenTest.tools/img/screenshot.png">
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RR6XYHYTQ9"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-RR6XYHYTQ9');
+        </script>
+    </head>
+
+    <body class="m-0 p-0 w-screen min-h-screen text-basic text-white text-sm">
+
+        {{ comp.header() | safe }}
+
+        <main class="w-full h-full">
+            {{ content | safe }}
+        </main>
+
+        <footer class="w-full p-8 z-100 bg-navy-light">
+            <div class="w-full flex flex-col items-center space-y-2 text-base">
+                <div class="flex items-center justify-center space-x-2">
+                    <a href="/disclaimer" class="text-pink-light hover:brightness-200">Disclaimer</a>
+                    <a href="/privacy-policy" class="text-pink-light hover:brightness-200">Privacy Policy</a>
+                </div>
+                <hr class="w-[260px] white opacity-30" />
+                <div class="flex items-center space-x-2">
+                    <a
+                        href="{{ site.github.url }}" target="_blank" rel="noopener noreferrer"
+                        class="text-pink-light hover:brightness-200">
+                        {{ site.github.name }}
+                    </a>            
+                    <a
+                        href="{{ site.twitter.url }}" target="_blank" rel="noopener noreferrer"
+                        class="text-pink-light hover:brightness-200">
+                        {{ site.twitter.name }}
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+
+
+curl -fsSL https://deno.land/x/install/install.sh | sh   
+
+/Users/mh/.deno/bin/deno run -Ar https://deno.land/x/lume/init.ts   
+
+
+/Users/mh/.deno/bin/deno install -A --no-check -r -f https://deno.land/x/deploy/deployctl.ts
+
+/Users/mh/.deno/bin/deno deno run --allow-net serve.ts 
+
+export DENO_DEPLOY_TOKEN=ddp_4em41Hb4u3M66oCCGnJBHxT0xNWp8n1QDsjo    
+/Users/mh/.deno/bin/deployctl deploy --project=offsec --prod serve.ts

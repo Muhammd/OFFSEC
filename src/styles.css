@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Code syntax highlight */
+@import "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/styles/github-dark.min.css";
+
+:root {
+    --color-pink: #db2777;
+    --color-pink-dark: #9d174d;
+    --color-pink-light: #f472b6;
+    --color-slate: #1e293b;
+    --color-slate-dark: #0f172a;
+    --color-slate-littledark: #121c2f;
+    --color-slate-light: #334155;
+    --color-yellow: #955d1e;
+    --color-yellow-dark: #523016;
+    --color-yellow-light: #da9a14;
+
+    /* Pagefind UI */
+    /* --pagefind-ui-scale: 0.8; */
+    --pagefind-ui-primary: red;
+    --pagefind-ui-text: #fff;
+    --pagefind-ui-background: var(--color-slate);
+    --pagefind-ui-border: none;
+    --pagefind-ui-tag: gray;
+    --pagefind-ui-border-width: 1.5px;
+    --pagefind-ui-border-radius: 12px;
+    --pagefind-ui-image-border-radius: 8px;
+    --pagefind-ui-image-box-ratio: 3 / 2;
+    --pagefind-ui-font: sans-serif;
+}
+
+
+/* Scroll bar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-slate-light);
+}
+::-webkit-scrollbar-corner {
+    background: none;
+}
+
+
+/* Pagefind */
+#search {
+    position: relative;
+    width: 100%;
+}
+
+#search .pagefind-ui {
+}
+
+#search .pagefind-ui__form {
+}
+
+#search .pagefind-ui__search-input {
+    transition: 0.1s;
+}
+#search .pagefind-ui__search-input:focus {
+    outline: 1.4px solid var(--color-pink-light);
+    filter: drop-shadow(0 0 0.75em var(--color-pink));
+}
+
+#search .pagefind-ui__drawer {
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    max-height: 400px;
+    background: var(--color-slate-light);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 12px 8px;
+}
+
+#search .pagefind-ui__message {
+    margin: 0;
+}
+
+#search .pagefind-ui__results-area {
+    margin-top: 16px;
+    padding: 6px 10px;
+}
+
+#search .pagefind-ui__results {
+    width: 100%;
+}
+
+#search .pagefind-ui__result {
+    margin: 0;
+    width: 100%;
+    padding: 12px 0;
+}
+
+#search .pagefind-ui__result-inner {
+    width: 100%;
+}
+
+#search .pagefind-ui__result-link {
+    color: var(--color-pink-light);
+    font-size: 1.1em;
+}
+#search .pagefind-ui__result-link:hover {
+    filter: brightness(1.4);
+}
+
+#search .pagefind-ui__result-excerpt {
+    width: 100%;
+    margin: 8px 0 0 0;
+    color: rgba(255,255,255,0.6);
+    font-size: 1em;
+    overflow-wrap: break-word;
+}
+
+#search .pagefind-ui__result-excerpt mark {
+    background: none;
+    color: var(--color-yellow-light);
+    font-weight: bold;
+    font-size: 1.05em;
+}
+
+#search .pagefind-ui__button {
+    color: var(--color-pink-light);
+}
+#search .pagefind-ui__button:hover {
+    filter: brightness(1.4);
+}
+
+/* Code blocks */
+/* Currently the code_highlighter plugin not working because (maybe) it conflicts tailwindCSS */
+
+pre code.hljs{
+    display:block;
+    overflow-x:auto;
+    border-radius: 8px;
+    padding:2em 1em;
+}
+code.hljs{padding:3px 5px}
+.hljs{color:#ddd;background:var(--color-slate-littledark)}
+.hljs-keyword,.hljs-link,.hljs-literal,.hljs-section,.hljs-selector-tag{color:#fff}
+.hljs-addition,.hljs-attribute,.hljs-built_in,.hljs-bullet,.hljs-name,.hljs-string,.hljs-symbol,
+.hljs-template-tag,.hljs-template-variable,.hljs-title,.hljs-type,.hljs-variable{color:#d88}
+.hljs-comment,.hljs-deletion,.hljs-meta,.hljs-quote{color:#979797}
+.hljs-doctag,.hljs-keyword,.hljs-literal,.hljs-name,.hljs-section,
+.hljs-selector-tag,.hljs-strong,.hljs-title,.hljs-type{font-weight:700}
+.hljs-emphasis{font-style:italic}
+
+.syntax-attr{color:aquamarine}
+.syntax-built_in{color:darkturquoise}
+.syntax-comment{color:gray;font-style:italic;}
+.syntax-keyword{color:gold}
+.syntax-literal{color:chartreuse}
+.syntax-meta{color:cyan}
+.syntax-number{color:paleturquoise}
+.syntax-string{color:orange}
+.syntax-title{color:#f472b6}
+.syntax-type{color:darkorange}
+.syntax-variable{color:aqua}
+
+
+/* Index page */
+#list-of-exploit {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+#list-of-exploit::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+/* Exploits */
+#exploit-content h2 {
+    margin: 28px 0 20px 0;
+    border-bottom: 1px solid var(--color-pink-dark);
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#exploit-content h2 a {
+    color: white;
+    opacity: 0.8;
+    line-height: 1.4em;
+}
+
+#exploit-content h3 {
+    margin: 26px 0 18px 0;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+#exploit-content h3 a {
+    color: white;
+    opacity: 0.8;
+    line-height: 1.2em;
+}
+
+#exploit-content p {
+    margin: 24px 0;
+    font-size: medium;
+}
+
+#exploit-content a {
+    color: var(--color-pink-light);
+}
+#exploit-content a:hover {
+    filter: brightness(200);
+}
+
+#exploit-content ul {
+    margin: 8px 0 0 8px;
+    list-style-type: circle;
+}
+
+#exploit-content ul li {
+    margin: 12px 0;
+}
+
+#exploit-content ol {
+    margin: 8px 0 0 8px;
+    list-style-type: decimal;
+}
+
+#exploit-content ol li {
+    margin: 12px 0;
+}
+
+
+/* 404 page */
+.body-404 {
+    width: 100vw;
+    height: 100vh;
+    background: red;
+}
+
+@media (min-width: 640px) {
+    
+}

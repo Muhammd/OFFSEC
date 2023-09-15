@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="m-0 p-0 w-screen min-h-screen bg-navy-dark"><head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OffSec Wiki | OffSec Wiki</title>
+        <meta name="description" content="Sticky notes for pentesting. Search hacking techniques and tools for penetration testings, RedTeaming, bug bounty, CTFs.">
+        
+        <link rel="icon" type="image/x-icon" href="/img/favicon-32.png">
+        <link rel="stylesheet" href="/pagefind/pagefind-ui.css"><link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="/css/carbonads.css">
+        
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@muhammdhaidari">
+        <meta name="twitter:creator" content="@muhammdhaidari">
+        <meta property="og:url" content="https://offsec.PenTest.tools/privacy-policy/">
+        <meta property="og:title" content="OffSec Wiki | OffSec Wiki">
+        <meta property="og:description" content="Sticky notes for pentesting. Search hacking techniques and tools for penetration testings, RedTeaming, bug bounty, CTFs.">
+        <meta property="og:image" content="https://offsec.PenTest.tools/img/screenshot.png">
+        
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RR6XYHYTQ9"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-RR6XYHYTQ9');
+        </script>
+    <script type="text/javascript" src="/pagefind/pagefind-ui.js"></script><script type="text/javascript">window.addEventListener('DOMContentLoaded', () => { new PagefindUI({"element":"#search","showImages":false,"showEmptyFilters":true,"resetStyles":true,"bundlePath":"/pagefind/","baseUrl":"/"}); });</script><link rel="stylesheet" href="/codecopy/codecopy.css"><script type="text/javascript" src="/codecopy/codecopy.js"></script></head>
+
+    <body class="m-0 p-0 w-screen min-h-screen text-basic text-white text-sm">
+
+        <header class="sticky top-0 w-full h-[70px] z-20 bg-gradient-to-r from-pink-dark">
+    <div class="mx-auto w-full sm:w-2/3 h-full flex justify-around items-center">
+        <div class="w-full h-full p-2 flex items-center space-x-3">
+            <a href="/" class="hidden sm:block">
+                <span class="text-base text-white font-bold">OFFSEC Wiki</span>
+            </a>
+            
+            <div id="search"></div>
+        </div>
+
+        
+        <div class="hidden sm:flex w-full h-full p-2 items-center justify-center space-x-3">
+            
+            <a href="https://github.com/muhammd/" target="_blank" rel="noopener noreferrer" alt="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" class="fill-white w-8 h-8 hover:brightness-200">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+            </a>
+            
+            <a href="https://twitter.com/muhammdhaidari" target="_blank" rel="noopener noreferrer" alt="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" class="fill-sky w-8 h-8 hover:brightness-200">
+                    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"></path></svg>
+            </a>
+        </div>
+    </div>
+</header>
+
+<div id="search_bg" class="fixed top-0 left-0 w-full z-10 h-full bg-black opacity-50 hidden"></div>
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        //Display the black filter when searching
+        const searchBgElem = document.getElementById("search_bg");
+        const drawerElem = document.querySelector(".pagefind-ui__drawer");
+        const inputElem = document.querySelector(".pagefind-ui__search-input");
+
+        if (searchBgElem) {
+            searchBgElem.addEventListener('click', () => {
+                searchBgElem.classList.add("hidden");
+                drawerElem.style.visibility = "hidden";
+                drawerElem.style.opacity = 0;
+            });
+        }
+
+        inputElem.addEventListener('focus', () => {
+            if (searchBgElem) {
+                searchBgElem.classList.remove("hidden");
+                drawerElem.style.visibility = "visible";
+                drawerElem.style.opacity = 1;
+            }
+        });
+    });
+</script>
+
+        <main class="w-full h-full">
+            <div class="w-full h-full flex flex-col items-center py-8">
+    <h1 class="my-4 text-4xl text-white font-bold">Privacy Policy</h1>
+    <div class="my-4 w-[90%] md:w-1/2">
+        <p>Last updated: July 30, 2023</p>
+        <p class="my-2 text-base">
+            This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.
+            We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the <a href="https://www.termsfeed.com/privacy-policy-generator/" target="_blank" class="text-pink-light hover:brightness-200">Privacy Policy Generator</a>.
+        </p>
+        
+        <h2 class="my-4 text-2xl font-bold">Usage Data</h2>
+        <p class="my-2 text-base">Usage Data is collected automatically when using the Service.</p>
+        <p class="my-2 text-base">
+            Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.
+        </p>
+        <p class="my-2 text-base">
+            When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.
+        </p>
+        <p class="my-2 text-base">
+            We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.
+        </p>
+
+        <h2 class="my-4 text-2xl font-bold">Tracking Technologies and Cookies</h2>
+        <p class="my-2 text-base">
+            We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service. The technologies We use may include:
+        </p>
+        <ul class="text-base">
+            <li class="my-2">
+                <strong>Cookies or Browser Cookies</strong>
+                <p>
+                    A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.
+                </p>
+            </li>
+        </ul>
+
+        <h2 class="my-4 text-2xl font-bold">Changes to this Privacy Policy</h2>
+        <p class="my-2 text-base">
+            We may update Our Privacy Policy from time to time.
+        </p>
+        <p class="my-2 text-base">
+            You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
+        </p>
+
+        <h2 class="my-4 text-2xl font-bold">Contact Me</h2>
+        <p class="my-2 text-base">If you have any questions about this Privacy Policy, You can contact me:</p>
+        <ul class="text-base">
+            <li>By email: <strong>mh@muhammd.com</strong></li>
+        </ul>
+    </div>
+</div>
+
+
+        </main>
+
+        <footer class="w-full p-8 z-100 bg-navy-light">
+            <div class="w-full flex flex-col items-center space-y-2 text-base">
+                <div class="flex items-center justify-center space-x-2">
+                    <a href="/disclaimer" class="text-pink-light hover:brightness-200">Disclaimer</a>
+                    <a href="/privacy-policy" class="text-pink-light hover:brightness-200">Privacy Policy</a>
+                </div>
+                <hr class="w-[260px] white opacity-30">
+                <div class="flex items-center space-x-2">
+                    <a href="https://github.com/muhammd/" target="_blank" rel="noopener noreferrer" class="text-pink-light hover:brightness-200">
+                        GitHub
+                    </a>            
+                    <a href="https://twitter.com/muhammdhaidari" target="_blank" rel="noopener noreferrer" class="text-pink-light hover:brightness-200">
+                        Twitter
+                    </a>
+                </div>
+            </div>
+        </footer>
+    
+
+</body></html>

@@ -1,0 +1,42 @@
+/* The css file generate by the codecopy plugin. */
+.codecopy_pre {
+    position: relative;
+}
+.codecopy_pre:hover .codecopy_copy {
+    opacity: 1;
+}
+
+.codecopy_copy {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 42px;
+    height: 42px;
+    padding: 12px;
+    background: #555585;
+    border: none;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.1s;
+}
+.codecopy_copy:hover {
+    background: #8888c8;
+}
+
+.codecopy_result {
+    position: absolute;
+    top: -30px;
+    right: -10px;
+    opacity: 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #12efb5;
+    pointer-events: none;
+    transition: 0.1s;
+}
